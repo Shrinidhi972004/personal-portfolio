@@ -1,33 +1,42 @@
-# DevOps & SRE Portfolio
+# 🚀 DevOps & SRE Portfolio - Shrinidhi Upadhyaya
 
-A modern, responsive portfolio website for DevOps Engineers and SRE professionals. Built with **Vite + React + Tailwind CSS + Framer Motion**.
+A modern, responsive portfolio website showcasing DevOps and SRE expertise. Built with **React + Vite + Tailwind CSS + Framer Motion** and featuring complete containerization and CI/CD pipeline.
 
-## 🚀 Features
+## ✨ Features
 
-- **Dark/Light Theme Toggle** with persistence
-- **Glass-morphism Design** with gradient accents
-- **Smooth Animations** via Framer Motion
-- **Responsive Layout** optimized for all devices
-- **Animated Particles** background on hero section
-- **Real-time Scroll Progress** indicator
-- **SEO Optimized** with meta tags and Open Graph
+- **🎨 Glass-morphism Design** with blue→purple→cyan gradient accents
+- **🎭 Smooth Animations** via Framer Motion with scroll triggers
+- **📱 Fully Responsive** layout optimized for all devices
+- **✨ Animated Particles** background on hero section
+- **📊 Real-time Scroll Progress** indicator
+- **🔍 SEO Optimized** with meta tags and Open Graph
+- **🐳 Docker Ready** with multi-stage Dockerfile
+- **🔄 CI/CD Pipeline** with Jenkins automation
 
 ## 🛠️ Tech Stack
 
-- ⚡ **Vite** - Fast build tool and dev server
-- ⚛️ **React 18** - Component-based UI library
+### Frontend
+- ⚡ **Vite** - Lightning-fast build tool and dev server
+- ⚛️ **React 18** - Modern component-based UI library
 - 🎨 **Tailwind CSS** - Utility-first CSS framework
-- 🎭 **Framer Motion** - Animation library
-- 🎯 **Lucide React** - Beautiful icons
-- 🔧 **React Tilt** - 3D hover effects
+- 🎭 **Framer Motion** - Production-ready motion library
+- 🎯 **Lucide React** - Beautiful, customizable icons
 
-## 📦 Quick Start
+### DevOps & Deployment
+- � **Docker** - Multi-stage containerization
+- 🐙 **Docker Compose** - Container orchestration
+- 🔧 **Jenkins** - CI/CD pipeline automation
+- ☁️ **AWS EC2** - Cloud deployment ready
+- 🌐 **Nginx** - Production web server
 
+## � Quick Start
+
+### Local Development
 ```bash
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server (http://localhost:5173)
 npm run dev
 
 # Build for production
@@ -37,51 +46,117 @@ npm run build
 npm run preview
 ```
 
-## 🎨 Customization
+### Docker Deployment
+```bash
+# Build and run with Docker Compose (http://localhost:6969)
+docker-compose up --build -d
 
-1. **Personal Info**: Update contact details in `src/components/Contact.jsx`
-2. **Projects**: Modify `src/data/portfolio.js` with your projects
+# Or build manually
+docker build -t portfolio:latest .
+docker run -p 6969:6969 portfolio:latest
+
+# Stop containers
+docker-compose down
+```
+
+### Jenkins CI/CD
+1. Configure Jenkins with Docker support
+2. Create new Pipeline job
+3. Point to this repository's `Jenkinsfile`
+4. Pipeline will automatically: Clean → Clone → Build → Docker Build → Deploy
+
+## 🎨 Project Highlights
+
+### Real Projects Featured
+- **🤖 Placements Notification Bot** - Telegram bot with AWS EC2 + Docker
+- **📸 MERN Gallery with DevSecOps** - Full-stack app with security pipeline
+- **📊 Unified Monitoring Platform** - Prometheus + Grafana observability
+- **🔐 Passwordless Authentication** - WebAuthn security implementation
+
+### Portfolio Sections
+- **👋 Hero** - Animated introduction with particle background
+- **👤 About** - Comprehensive DevOps/SRE background
+- **⚙️ Skills** - Interactive tech stack showcase
+- **🚀 Projects** - Filterable project cards with real GitHub links
+- **📞 Contact** - Direct links to email, phone, GitHub, LinkedIn
+
+## � Project Structure
+
+```
+├── src/
+│   ├── components/          # React components
+│   │   ├── Hero.jsx        # Landing section with animations
+│   │   ├── About.jsx       # Personal background
+│   │   ├── Skills.jsx      # Technical skills grid
+│   │   ├── Projects.jsx    # Project showcase
+│   │   ├── Contact.jsx     # Contact information
+│   │   └── ...
+│   ├── data/
+│   │   └── portfolio.js    # Projects and skills data
+│   ├── styles.css          # Global styles and utilities
+│   └── App.jsx            # Main application
+├── public/                 # Static assets
+├── Dockerfile             # Multi-stage container build
+├── docker-compose.yml     # Container orchestration
+├── Jenkinsfile           # CI/CD pipeline definition
+└── vars/                 # Jenkins pipeline utilities
+```
+
+## 🔧 Customization
+
+### Update Personal Information
+1. **Contact Details**: Edit `src/components/Contact.jsx`
+2. **Projects**: Modify `src/data/portfolio.js`
 3. **Skills**: Update skills array in `src/data/portfolio.js`
-4. **Certifications**: Add your certifications in `src/data/portfolio.js`
-5. **Avatar**: Replace `avatar-placeholder.png` with your photo
+4. **Profile Photo**: Replace `public/profile.png`
+5. **Resume**: Replace `public/devops_resume.pdf`
 
-## 🚀 Deployment
+### Environment Configuration
+- **Development**: Runs on port `5173`
+- **Production**: Docker serves on port `6969`
+- **Customization**: Update ports in `docker-compose.yml`
 
-### Netlify
+## 🌐 Deployment Options
+
+### Cloud Platforms
 ```bash
-npm run build
-# Drag & drop `dist` folder to Netlify
+# Netlify
+npm run build && netlify deploy --prod --dir=dist
+
+# Vercel
+npm run build && vercel --prod
+
+# AWS EC2 with Docker
+docker-compose up -d
 ```
 
-### Vercel
+### Self-Hosted
 ```bash
-npm run build
-vercel --prod
+# Using PM2
+npm run build && pm2 serve dist 6969 --spa
+
+# Using Nginx
+# Copy dist/ to /var/www/html and configure nginx
 ```
 
-### GitHub Pages
-```bash
-npm run build
-# Deploy `dist` folder contents to gh-pages branch
-```
+## 🎯 Performance & SEO
 
-## 📝 Project Structure
+- ⚡ **Lighthouse Score**: 95+ Performance
+- 🔍 **SEO Optimized**: Meta tags, structured data
+- 📱 **Mobile-First**: Responsive design
+- ⚙️ **Optimized Build**: Tree-shaking, code splitting
+- 🖼️ **Image Optimization**: Compressed assets
+- 🚀 **Fast Loading**: Vite bundling optimization
 
-```
-src/
-├── components/          # React components
-├── data/               # Portfolio data
-├── styles.css          # Global styles
-└── App.jsx            # Main app component
-```
+## 📞 Contact Information
 
-## 🎯 SEO & Performance
-
-- Optimized for **Lighthouse** scores
-- **Meta tags** for social sharing
-- **Fast loading** with Vite bundling
-- **Mobile-first** responsive design
+- **📧 Email**: shrinidhiupadhyaya00@gmail.com
+- **📱 Phone**: +91 7204200386
+- **💻 GitHub**: [Shrinidhi972004](https://github.com/Shrinidhi972004)
+- **💼 LinkedIn**: [shrinidhi-upadhyaya](https://linkedin.com/in/shrinidhi-upadhyaya-82114a26a/)
 
 ---
 
-**Built with ❤️ using DevOps mindset**
+### 🎉 **Built with ❤️ using DevOps mindset and modern web technologies**
+
+*Ready for production deployment with enterprise-grade CI/CD pipeline*
