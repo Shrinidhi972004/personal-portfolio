@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(124,58,237,0.12);
+  --accent-gradient: linear-gradient(90deg,#0ea5e9, #7c3aed, #06b6d4);
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.glow-border {
+  box-shadow: 0 6px 30px rgba(124,58,237,0.12), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid rgba(124,58,237,0.18);
+}
+
+.accent-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Scrollbar small tweak */
+*::-webkit-scrollbar{height:8px;width:8px}
+*::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#7c3aed,#0ea5e9);border-radius:9999px}
+
