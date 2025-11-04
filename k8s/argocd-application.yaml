@@ -1,0 +1,72 @@
+---
+# ArgoCD Application for GitOps Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portfolio
+  namespace: argocd
+  # Finalizer to ensure proper cleanup
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # Project the application belongs to
+  project: default
+
+  # Source repository configuration
+  source:
+    # GitHub repository URL
+    repoURL: https://github.com/Shrinidhi972004/personal-portfolio
+    targetRevision: main
+    path: k8s
+    
+    # Kustomize configuration
+    kustomize:
+      namePrefix: ""
+      nameSuffix: ""
+      images:
+        - your-registry/portfolio:latest
+
+  # Destination cluster and namespace
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: portfolio
+
+  # Sync policy
+  syncPolicy:
+    # Automated sync configuration
+    automated:
+      # Automatically sync when changes detected
+      prune: true
+      # Automatically correct drift
+      selfHeal: true
+      # Allow resource deletion
+      allowEmpty: false
+
+    # Sync options
+    syncOptions:
+      # Create namespace if it doesn't exist
+      - CreateNamespace=true
+      # Validate resources before applying
+      - Validate=true
+      # Use server-side apply
+      - ServerSideApply=true
+      # Respect ignore differences
+      - RespectIgnoreDifferences=true
+
+    # Retry configuration
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+
+  # Ignore differences in certain fields
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/replicas
+
+  # Health assessment configuration
+  revisionHistoryLimit: 10

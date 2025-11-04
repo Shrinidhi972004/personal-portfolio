@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-config
+  labels:
+    app: portfolio
+data:
+  NGINX_PORT: "6969"
+  APP_NAME: "DevOps Portfolio"
+  ENVIRONMENT: "production"
