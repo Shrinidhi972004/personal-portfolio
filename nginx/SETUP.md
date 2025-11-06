@@ -117,7 +117,7 @@ After DNS propagates, access:
 - **https://shrinidhi.space** ✅
 - **https://www.shrinidhi.space** ✅
 
-All will proxy to: `http://3.110.202.187:6969`
+All will proxy to: `http://13.203.230.97:6969`
 
 ---
 
@@ -165,7 +165,7 @@ sudo tail -f /var/log/nginx/error.log
 ### Test Backend Connection
 ```bash
 # Test if your backend is accessible
-curl http://3.110.202.187:6969
+curl http://13.203.230.97:6969
 
 # Test from Nginx server
 curl -I http://localhost
@@ -197,7 +197,7 @@ https://shrinidhi.space (Port 443)
     ↓
 Nginx Reverse Proxy (Your Server)
     ↓
-http://3.110.202.187:6969 (EC2 Backend)
+http://13.203.230.97:6969 (EC2 Backend)
     ↓
 Portfolio Website (Docker Container)
 ```
@@ -237,7 +237,7 @@ sudo certbot --nginx -d shrinidhi.space -d www.shrinidhi.space
 If you encounter issues:
 1. Check Nginx error logs: `sudo tail -f /var/log/nginx/error.log`
 2. Verify DNS: `dig shrinidhi.space`
-3. Test backend: `curl http://3.110.202.187:6969`
+3. Test backend: `curl http://13.203.230.97:6969`
 4. Check firewall: `sudo ufw status`
 
 Your portfolio will be live at **https://shrinidhi.space** 🚀

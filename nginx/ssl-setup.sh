@@ -55,8 +55,8 @@ else
     echo "   ❌ $DOMAIN does not resolve!"
     echo ""
     echo "   Please configure DNS in Hostinger first:"
-    echo "   A Record: @ → 3.110.202.187"
-    echo "   A Record: www → 3.110.202.187"
+    echo "   A Record: @ → 13.203.230.97"
+    echo "   A Record: www → 13.203.230.97"
     echo ""
     echo "   Wait 5-10 minutes after DNS configuration and try again."
     exit 1

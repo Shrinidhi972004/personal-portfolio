@@ -23,7 +23,7 @@ Before running SSL setup, make sure:
 # Check if domain resolves to your EC2 IP
 dig shrinidhi.space
 
-# You should see: shrinidhi.space. IN A 3.110.202.187
+# You should see: shrinidhi.space. IN A 13.203.230.97
 
 # Or use nslookup
 nslookup shrinidhi.space
@@ -67,7 +67,7 @@ curl http://shrinidhi.space
 
 ### SSH to Your EC2 Instance:
 ```bash
-ssh -i your-key.pem ubuntu@3.110.202.187
+ssh -i your-key.pem ubuntu@13.203.230.97
 ```
 
 ### Option A: Automated Setup (Recommended)
@@ -147,8 +147,8 @@ curl -I http://shrinidhi.space
 dig shrinidhi.space
 
 # If no result, configure DNS in Hostinger:
-# A Record: @ → 3.110.202.187
-# A Record: www → 3.110.202.187
+# A Record: @ → 13.203.230.97
+# A Record: www → 13.203.230.97
 
 # Wait 5-10 minutes and try again
 ```

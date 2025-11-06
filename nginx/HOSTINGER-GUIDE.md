@@ -21,7 +21,7 @@ Follow these steps in order:
 ```
 Type: A
 Name: @ (or leave empty, or use shrinidhi.space)
-Points to: 3.110.202.187
+Points to: 13.203.230.97
 TTL: 14400 (or Auto/Default)
 ```
 
@@ -29,7 +29,7 @@ TTL: 14400 (or Auto/Default)
 ```
 Type: A
 Name: www
-Points to: 3.110.202.187
+Points to: 13.203.230.97
 TTL: 14400 (or Auto/Default)
 ```
 
@@ -55,7 +55,7 @@ dig www.shrinidhi.space
 
 ### Connect to Your EC2 Instance:
 ```bash
-ssh -i your-key.pem ubuntu@3.110.202.187
+ssh -i your-key.pem ubuntu@13.203.230.97
 ```
 
 ### Make Sure Your Portfolio is Running:
@@ -138,7 +138,7 @@ sudo systemctl restart nginx
 
 ### In AWS Console:
 1. Go to **EC2 Dashboard**
-2. Click on your instance (`3.110.202.187`)
+2. Click on your instance (`13.203.230.97`)
 3. Click **Security** tab
 4. Click on the **Security Group** link
 5. Click **Edit Inbound Rules**
@@ -276,7 +276,7 @@ sudo systemctl status nginx
 ```
 Internet
    ↓
-DNS: shrinidhi.space → 3.110.202.187
+DNS: shrinidhi.space → 13.203.230.97
    ↓
 AWS Security Group (Ports 80, 443)
    ↓

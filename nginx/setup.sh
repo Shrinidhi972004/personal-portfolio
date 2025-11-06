@@ -19,7 +19,7 @@ fi
 # Variables
 DOMAIN="shrinidhi.space"
 WWW_DOMAIN="www.shrinidhi.space"
-BACKEND_URL="http://3.110.202.187:6969"
+BACKEND_URL="http://13.203.230.97:6969"
 EMAIL="shrinidhiupadhyaya00@gmail.com"
 
 echo "📋 Configuration:"
@@ -56,7 +56,7 @@ server {
     
     # Proxy to your EC2 instance
     location / {
-        proxy_pass http://3.110.202.187:6969;
+        proxy_pass http://13.203.230.97:6969;
         proxy_http_version 1.1;
         
         # Proxy Headers
@@ -78,7 +78,7 @@ server {
     
     # Cache static assets
     location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot)$ {
-        proxy_pass http://3.110.202.187:6969;
+        proxy_pass http://13.203.230.97:6969;
         add_header Cache-Control "public, max-age=86400";
     }
 }
