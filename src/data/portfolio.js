@@ -56,6 +56,15 @@ export const projects = [
     stack: ['Kubernetes', 'Go', 'Helm', 'Prometheus', 'AWS EKS'],
     github: 'https://github.com/shrinidhi-upadhyaya/cloudscale',
     live: null
+  },
+  {
+    id: 7,
+    title: 'AI-Powered Construction Site Safety Intelligence System',
+    tags: ['DevOps', 'Cloud'],
+    description: 'A comprehensive real-time safety monitoring system using computer vision, YOLOv8 object detection, and emergency alerting for construction sites.',
+    stack: ['Kubernetes', 'Fast API', 'Helm', 'Prometheus', 'Grafana'],
+    github: 'https://github.com/Shrinidhi972004/DevHost-2025-CodeMartials.git',
+    live: null
   }
 ]
 
